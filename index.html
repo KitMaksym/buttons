@@ -29,10 +29,13 @@
         }
 
         .sound-button-cell iframe {
-            width: 100%;
+            /* Змінено: зменшуємо ширину на 35px (10px зліва + 25px справа) */
+            width: calc(100% - 35px); 
             height: 160px; 
             border: none;
             display: block; 
+            /* Встановлено явні відступи: 0 зверху/знизу, 25px справа, 10px зліва */
+            margin: 0 25px 0 10px; 
             transform: none; 
             transform-origin: center;
         }
@@ -59,14 +62,13 @@
 
     <div class="container mx-auto max-w-6xl mb-10 text-center relative z-10">
         <header class="py-6">
-            <h1 class="text-5xl md:text-7xl font-black mb-4 gradient-text tracking-tight">ЗАРУБКА?</h1>
+            <h1 class="text-5xl md:text-7xl font-black mb-4 gradient-text tracking-tight">моє дз??</h1>
             <p class="text-gray-300 text-lg md:text-xl font-light tracking-wide bg-black/20 inline-block px-4 py-2 rounded-full backdrop-blur-sm">
                 ДОБАВЛЕНО СМАРАГДОВЕ НЕБО ПІСЛЯ ЙОГО ПОПУЛЯРНОСТІ!!
             </p>
         </header>
     </div>
-
-    <div id="soundGrid" class="container mx-auto max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 pb-20">
+    <div id="soundGrid" class="container mx-auto max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 pb-20">
     </div>
 
     <footer id="footer" class="text-center text-white/40 pb-8 text-sm">
@@ -75,7 +77,7 @@
 
     <script>
         const soundSlugs = [
-            "loud-shitpost-fart-29114", "vanka-vstanka-28660", "m-i-a-u-7768", "otkroi-mne-bazu-i-verni-mne-brr-br-badabim-4196", "truba-upala-79031", "tun-tun-sakhurchik-br-br-patapim-86758", "paskhalko-eshchkere-1488-57088", "salo-salo-salo-ukrainskii-salo-bassbosted-3529", "germaniia-26997", "fnaf-jumpscare-scream", "zachem-ty-so-mnoi-tak-postupaesh-23210", "yyy-standof-2-govno-96684", "gudok-poezda-83982", "puk-v-ekho-688", "imbo-otryzhka-79897", "perduliatsiia-13754", "uletaiu-na-gaitii-no-eto-minus-ushi-9613", "hub-intro-sound-55662", "smekh-rebenka-85428", "nastoiashchii-geroi-slav-eto-ne-tot-kto-62013", "minuta-poshla-60620", "rampage-song-78944", "plankton-aaaaa-7769", "social-credit-music-63796", "kazik-po-raspisaniiu-68167", "goida-31464", "robloks-udalila-mne-mama-17078", "40-let-kak-pod-narkozom-5181", "fortnite-default-dance-bass-bo", "hold-up-tiktok-78592", "fire-in-the-hole-geometry-dash-52280", "zhdi-doks-zhdi-svat-66556", "english-or-spanish-song-36522", "na-koleni-na-koleni-5749", "bu-ispugalsia-ne-boisia-no-eto-400-gramm-76838", "999-social-credit-siren-82729", "deg-deg-44362", "1000000000-iq-94040", "1x1x1x1-singing-90285", "415-i-ia-baza-otvette-49341", "5x30-78034", "6-7-6-7-8502", "67-71609", "aaaaaaaaaaaaaaaaaaaa-e-lutador-57357", "among-us-role-reveal-sound-34956", "and-his-name-is-john-cenaaaaaa", "angry-birds-bass-boosted-27588", "anime-ahh-73606", "ay-ay-ay-im-ur-little-butterfly-3445", "brr-brr-patapim-alarm-clock-15613", "bruh", "death-sound-fortnite-13941", "dexter-song-2-46283", "discord-call-44910", "dota-2-monster-kill", "evolution-mega-knight-36288", "extremely-loud-incorrect-buzzer-43033", "fahhhhhhhhhhhhhh-3525", "fears-to-fathom-notification-sound-46473", "fnaf-2-hallway-4016", "goofy-ahh-car-horn-41395", "hello-fnaf-1250", "hi-hi-hi-ha-clash-royale-97639", "i-always-come-back-scraptrap-william-afton-21432", "i-got-this-fahhhhhh-83384", "iba-chotko-6728", "john-pork-is-calling-moooort-39009", "lobotomy-sound-effect-98475", "m-e-o-w-82698", "mario-jump", "mellstroy-poekhali-iopte-63591", "mi-bombo-duolingo-84018", "michael-dont-leave-me-here-42269", "minecraft-hurt", "mortal-kombat", "noooo", "oh-no-no-no-tik-tok-song-sound-effect-63466", "peppa-pig-haram-85706", "poco-x3-phone-11719", "rat-dance-music-93451", "roblox-death-sound-effect-2459", "sybau-39386", "vine-boom-sound-70972", "whatsapp-bass-boosted-69954", "windows-xp-shutdown", "za-warudo-time-stop", "a-ia-znaiu-chto-ty-drochish-66390", "aaaaaaa-zhenshchina-97686", "arbuz-arbuz-privet-42992", "akhkh-akhkh-eshchio-84695", "blia-64707", "bobuliatsiia-13652", "bu-ispugalsia-ne-boisia-51457", "buba-pirozhok-48480", "vasap-maboi-75258", "vizg-svini-91156", "votch-demo-54610", "gimn-tvicha-bez-tsenzury-258", "gimn-tvicha-bass-boosted-21122", "gimn-ukrainy-9174", "go-go-go-go-12377", "da-vse-zavali-ebalo-maiakovskii-91105", "da-zavali-ty-svoe-63152", "da-ty-che-61980", "daite-mopsam-internet-47142", "daniil-fart-47917", "devochka-uensdei-72985", "dimon-14786", "do-slobody-doedu-17186", "dobroe-utro-moia-devochka-47676", "depnut-mne-64852", "diadia-sasha-30914", "est-probitie-chistoe-91959", "eshchio-raz-pozvonish-ubiu-nafek-50694"
+            "loud-shitpost-fart-29114", "vanka-vstanka-28660", "m-i-a-u-7768", "otkroi-mne-bazu-i-verni-mne-brr-br-badabim-4196", "truba-upala-79031", "tun-tun-sakhurchik-br-br-patapim-86758", "paskhalko-eshchkere-1488-57088", "salo-salo-salo-ukrainskii-salo-bassbosted-3529", "germaniia-26997", "fnaf-jumpscare-scream", "zachem-ty-so-mnoi-tak-postupaesh-23210", "yyy-standof-2-govno-96684", "gudok-poezda-83982", "puk-v-ekho-688", "imbo-otryzhka-79897", "perduliatsiia-13754", "uletaiu-na-gaitii-no-eto-minus-ushi-9613", "hub-intro-sound-55662", "smekh-rebenka-85428", "minuta-poshla-60620", "rampage-song-78944", "plankton-aaaaa-7769", "social-credit-music-63796", "kazik-po-raspisaniiu-68167", "goida-31464", "robloks-udalila-mne-mama-17078", "40-let-kak-pod-narkozom-5181", "fortnite-default-dance-bass-bo", "hold-up-tiktok-78592", "fire-in-the-hole-geometry-dash-52280", "zhdi-doks-zhdi-svat-66556", "english-or-spanish-song-36522", "na-koleni-na-koleni-5749", "bu-ispugalsia-ne-boisia-no-eto-400-gramm-76838", "999-social-credit-siren-82729", "deg-deg-44362", "1000000000-iq-94040", "1x1x1x1-singing-90285", "415-i-ia-baza-otvette-49341", "5x30-78034", "6-7-6-7-8502", "67-71609", "aaaaaaaaaaaaaaaaaaaa-e-lutador-57357", "among-us-role-reveal-sound-34956", "and-his-name-is-john-cenaaaaaa", "angry-birds-bass-boosted-27588", "anime-ahh-73606", "ay-ay-ay-im-ur-little-butterfly-3445", "brr-brr-patapim-alarm-clock-15613", "bruh", "death-sound-fortnite-13941", "dexter-song-2-46283", "discord-call-44910", "dota-2-monster-kill", "evolution-mega-knight-36288", "extremely-loud-incorrect-buzzer-43033", "fahhhhhhhhhhhhhh-3525", "fears-to-fathom-notification-sound-46473", "fnaf-2-hallway-4016", "goofy-ahh-car-horn-41395", "hello-fnaf-1250", "hi-hi-hi-ha-clash-royale-97639", "i-always-come-back-scraptrap-william-afton-21432", "i-got-this-fahhhhhh-83384", "iba-chotko-6728", "john-pork-is-calling-moooort-39009", "lobotomy-sound-effect-98475", "m-e-o-w-82698", "mario-jump", "mellstroy-poekhali-iopte-63591", "mi-bombo-duolingo-84018", "michael-dont-leave-me-here-42269", "minecraft-hurt", "mortal-kombat", "noooo", "oh-no-no-no-tik-tok-song-sound-effect-63466", "peppa-pig-haram-85706", "poco-x3-phone-11719", "rat-dance-music-93451", "roblox-death-sound-effect-2459", "sybau-39386", "vine-boom-sound-70972", "whatsapp-bass-boosted-69954", "windows-xp-shutdown", "za-warudo-time-stop", "a-ia-znaiu-chto-ty-drochish-66390", "aaaaaaa-zhenshchina-97686", "arbuz-arbuz-privet-42992", "akhkh-akhkh-eshchio-84695", "blia-64707", "bobuliatsiia-13652", "bu-ispugalsia-ne-boisia-51457", "buba-pirozhok-48480", "vasap-maboi-75258", "vizg-svini-91156", "votch-demo-54610", "gimn-tvicha-bez-tsenzury-258", "gimn-tvicha-bass-boosted-21122", "gimn-ukrainy-9174", "go-go-go-go-12377", "da-vse-zavali-ebalo-maiakovskii-91105", "da-zavali-ty-svoe-63152", "da-ty-che-61980", "daite-mopsam-internet-47142", "daniil-fart-47917", "devochka-uensdei-72985", "dimon-14786", "do-slobody-doedu-17186", "dobroe-utro-moia-devochka-47676", "depnut-mne-64852", "diadia-sasha-30914", "est-probitie-chistoe-91959", "eshchio-raz-pozvonish-ubiu-nafek-50694"
         ].filter((value, index, self) => self.indexOf(value) === index);
 
         const grid = document.getElementById('soundGrid');
