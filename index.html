@@ -3,276 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>МОЄ ДЗ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>МОЄ ДЗ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        
         body {
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #4a1c40);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: #fff;
+            animation: gradientBG 15s ease infinite;
+            color: white;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
         }
-        
-        @keyframes gradient {
+
+        @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        header {
-            margin: 30px 0;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #ff8a00, #da1b60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .sound-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .sound-item {
+
+        .sound-button-cell {
             position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            height: 200px;
+            transition: all 0.3s ease; 
         }
-        
-        .sound-item:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .sound-item iframe {
+
+        .sound-button-cell iframe {
             width: 100%;
-            height: 100%;
+            height: 160px; 
             border: none;
-            border-radius: 12px;
+            display: block; 
+            transform: none; 
+            transform-origin: center;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(229, 46, 113, 0.3);
         }
         
-        .sound-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            pointer-events: none;
-            border-radius: 0 0 12px 12px;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        footer {
-            margin-top: 40px;
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .sound-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .sound-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+        .animate-fade {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out forwards;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>моє дз??</h1>
-            <p>я то робив 30 хв і *не* добавлено смарагдове небо!!!</p>
+<body class="p-4 md:p-8">
+
+    <div class="container mx-auto max-w-6xl mb-10 text-center relative z-10">
+        <header class="py-6">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 gradient-text tracking-tight">ЗАРУБКА?</h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light tracking-wide bg-black/20 inline-block px-4 py-2 rounded-full backdrop-blur-sm">
+                ДОБАВЛЕНО СМАРАГДОВЕ НЕБО ПІСЛЯ ЙОГО ПОПУЛЯРНОСТІ!!
+            </p>
         </header>
-        
-        <div class="sound-grid">
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/loud-shitpost-fart-29114/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/vanka-vstanka-28660/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/m-i-a-u-7768/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/otkroi-mne-bazu-i-verni-mne-brr-br-badabim-4196/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/net-idi-nakhui-42582/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/truba-upala-79031/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/gimn-tvicha-mzlf-32878/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/tun-tun-sakhurchik-br-br-patapim-86758/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/paskhalko-eshchkere-1488-57088/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/salo-salo-salo-ukrainskii-salo-bassbosted-3529/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/germaniia-26997/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/fnaf-jumpscare-scream/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/zachem-ty-so-mnoi-tak-postupaesh-23210/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/yyy-standof-2-govno-96684/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/gudok-poezda-83982/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/puk-v-ekho-688/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/imbo-otryzhka-79897/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/perduliatsiia-13754/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/uletaiu-na-gaitii-no-eto-minus-ushi-9613/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/hub-intro-sound-55662/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/smekh-rebenka-85428/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/nastoiashchii-geroi-slav-eto-ne-tot-kto-62013/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/minuta-poshla-60620/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/rampage-song-78944/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/plankton-aaaaa-7769/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/social-credit-music-63796/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/kazik-po-raspisaniiu-68167/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/goida-31464/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/prosto-daite-uzhe-pult-ot-iaderki-7625/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/robloks-udalila-mne-mama-17078/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/40-let-kak-pod-narkozom-5181/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/fortnite-default-dance-bass-bo/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/hold-up-tiktok-78592/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/fire-in-the-hole-geometry-dash-52280/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/zhdi-doks-zhdi-svat-66556/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/english-or-spanish-song-36522/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/na-koleni-na-koleni-5749/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="sound-item">
-                <iframe src="https://www.myinstants.com/instant/bu-ispugalsia-ne-boisia-no-eto-400-gramm-76838/embed/" frameborder="0" scrolling="no"></iframe>
-            </div>
-        </div>
-        
-        <footer>
-            <p>Нажми на кнопку</p>
-        </footer>
     </div>
 
+    <div id="soundGrid" class="container mx-auto max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 pb-20">
+    </div>
+
+    <footer id="footer" class="text-center text-white/40 pb-8 text-sm">
+        Права не захищені Кітик Максімчєк
+    </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const soundItems = document.querySelectorAll('.sound-item');
-            let currentlyPlaying = null;
+        const soundSlugs = [
+            "loud-shitpost-fart-29114", "vanka-vstanka-28660", "m-i-a-u-7768", "otkroi-mne-bazu-i-verni-mne-brr-br-badabim-4196", "truba-upala-79031", "tun-tun-sakhurchik-br-br-patapim-86758", "paskhalko-eshchkere-1488-57088", "salo-salo-salo-ukrainskii-salo-bassbosted-3529", "germaniia-26997", "fnaf-jumpscare-scream", "zachem-ty-so-mnoi-tak-postupaesh-23210", "yyy-standof-2-govno-96684", "gudok-poezda-83982", "puk-v-ekho-688", "imbo-otryzhka-79897", "perduliatsiia-13754", "uletaiu-na-gaitii-no-eto-minus-ushi-9613", "hub-intro-sound-55662", "smekh-rebenka-85428", "nastoiashchii-geroi-slav-eto-ne-tot-kto-62013", "minuta-poshla-60620", "rampage-song-78944", "plankton-aaaaa-7769", "social-credit-music-63796", "kazik-po-raspisaniiu-68167", "goida-31464", "robloks-udalila-mne-mama-17078", "40-let-kak-pod-narkozom-5181", "fortnite-default-dance-bass-bo", "hold-up-tiktok-78592", "fire-in-the-hole-geometry-dash-52280", "zhdi-doks-zhdi-svat-66556", "english-or-spanish-song-36522", "na-koleni-na-koleni-5749", "bu-ispugalsia-ne-boisia-no-eto-400-gramm-76838", "999-social-credit-siren-82729", "deg-deg-44362", "1000000000-iq-94040", "1x1x1x1-singing-90285", "415-i-ia-baza-otvette-49341", "5x30-78034", "6-7-6-7-8502", "67-71609", "aaaaaaaaaaaaaaaaaaaa-e-lutador-57357", "among-us-role-reveal-sound-34956", "and-his-name-is-john-cenaaaaaa", "angry-birds-bass-boosted-27588", "anime-ahh-73606", "ay-ay-ay-im-ur-little-butterfly-3445", "brr-brr-patapim-alarm-clock-15613", "bruh", "death-sound-fortnite-13941", "dexter-song-2-46283", "discord-call-44910", "dota-2-monster-kill", "evolution-mega-knight-36288", "extremely-loud-incorrect-buzzer-43033", "fahhhhhhhhhhhhhh-3525", "fears-to-fathom-notification-sound-46473", "fnaf-2-hallway-4016", "goofy-ahh-car-horn-41395", "hello-fnaf-1250", "hi-hi-hi-ha-clash-royale-97639", "i-always-come-back-scraptrap-william-afton-21432", "i-got-this-fahhhhhh-83384", "iba-chotko-6728", "john-pork-is-calling-moooort-39009", "lobotomy-sound-effect-98475", "m-e-o-w-82698", "mario-jump", "mellstroy-poekhali-iopte-63591", "mi-bombo-duolingo-84018", "michael-dont-leave-me-here-42269", "minecraft-hurt", "mortal-kombat", "noooo", "oh-no-no-no-tik-tok-song-sound-effect-63466", "peppa-pig-haram-85706", "poco-x3-phone-11719", "rat-dance-music-93451", "roblox-death-sound-effect-2459", "sybau-39386", "vine-boom-sound-70972", "whatsapp-bass-boosted-69954", "windows-xp-shutdown", "za-warudo-time-stop", "a-ia-znaiu-chto-ty-drochish-66390", "aaaaaaa-zhenshchina-97686", "arbuz-arbuz-privet-42992", "akhkh-akhkh-eshchio-84695", "blia-64707", "bobuliatsiia-13652", "bu-ispugalsia-ne-boisia-51457", "buba-pirozhok-48480", "vasap-maboi-75258", "vizg-svini-91156", "votch-demo-54610", "gimn-tvicha-bez-tsenzury-258", "gimn-tvicha-bass-boosted-21122", "gimn-ukrainy-9174", "go-go-go-go-12377", "da-vse-zavali-ebalo-maiakovskii-91105", "da-zavali-ty-svoe-63152", "da-ty-che-61980", "daite-mopsam-internet-47142", "daniil-fart-47917", "devochka-uensdei-72985", "dimon-14786", "do-slobody-doedu-17186", "dobroe-utro-moia-devochka-47676", "depnut-mne-64852", "diadia-sasha-30914", "est-probitie-chistoe-91959", "eshchio-raz-pozvonish-ubiu-nafek-50694"
+        ].filter((value, index, self) => self.indexOf(value) === index);
+
+        const grid = document.getElementById('soundGrid');
+        const footer = document.getElementById('footer');
+
+        const BUTTONS_PER_PAGE = 10;
+        let loadedCount = 0;
+        let isLoading = false; 
+
+        function loadMoreButtons() {
+            if (isLoading || loadedCount >= soundSlugs.length) {
+                if (loadedCount >= soundSlugs.length) {
+                    footer.textContent = 'Права не захищені🔓 Кітик Максімчєк';
+                }
+                return;
+            }
+
+            isLoading = true;
+            footer.textContent = 'Шоб не лагаль телєфончік поділив сайт на сторінки';
+
+            const startIndex = loadedCount;
+            const endIndex = Math.min(loadedCount + BUTTONS_PER_PAGE, soundSlugs.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const slug = soundSlugs[i];
+                const container = document.createElement('div');
+                container.style.animationDelay = `${(i - startIndex) * 10}ms`; 
+                container.className = 'sound-button-cell animate-fade'; 
+                
+                const embedUrl = `https://www.myinstants.com/instant/${slug}/embed/`;
+
+                container.innerHTML = `<iframe src="${embedUrl}" scrolling="no"></iframe>`;
+                grid.appendChild(container);
+            }
+
+            loadedCount = endIndex;
+            isLoading = false;
             
-            soundItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const iframe = this.querySelector('iframe');
-                    
-                    if (currentlyPlaying && currentlyPlaying !== iframe) {
-                        currentlyPlaying.contentWindow.postMessage('{"method":"pause"}', '*');
-                    }
-                    
-                    iframe.contentWindow.postMessage('{"method":"play"}', '*');
-                    currentlyPlaying = iframe;
-                    
-                    this.style.transform = 'translateY(-5px) scale(1.03)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-        });
+            if (loadedCount < soundSlugs.length) {
+                footer.textContent = 'а';
+            } else {
+                footer.textContent = 'Права не захищені🔓 Кітик Максімчєк';
+            }
+        }
+
+        function checkScroll() {
+            const documentBottom = document.documentElement.scrollHeight;
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const threshold = 500; 
+
+            if (scrollPosition >= documentBottom - threshold) {
+                loadMoreButtons();
+            }
+        }
+
+        function initializeSoundButtons() {
+            loadMoreButtons();
+            window.addEventListener('scroll', checkScroll);
+            window.addEventListener('resize', checkScroll);
+        }
+
+        window.onload = initializeSoundButtons;
     </script>
 </body>
 </html>
